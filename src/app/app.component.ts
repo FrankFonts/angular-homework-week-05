@@ -1,5 +1,5 @@
-import { Component, VERSION } from '@angular/core';
-import { Data, infectionData } from './infection-data';
+import { Component } from '@angular/core';
+import { Data, infectionData } from './shared/infection-data';
 
 @Component({
   selector: 'my-app',

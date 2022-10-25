@@ -8,7 +8,7 @@ import { Data } from '../infection-data';
   styleUrls: ['./infection-data.component.css'],
 })
 export class InfectionDataComponent implements OnInit {
-  @Input() data: Data;
+  @Input() dailyData: Data;
 
   
   constructor() {}
