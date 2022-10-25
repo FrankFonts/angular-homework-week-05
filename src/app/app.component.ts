@@ -8,4 +8,10 @@ import { Data, infectionData } from './shared/infection-data';
 })
 export class AppComponent {
   infectionData: Array<Data> | undefined = infectionData;
+
+  iWantTheTruth: boolean = false;
+
+  calculateNewInfectionNumberFrom(data) {
+    return Math.floor(data.numberOfDailyTests * 5 * Math.random());
+  }
 }

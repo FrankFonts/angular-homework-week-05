@@ -1,4 +1,8 @@
-<div>
-  {{ dailyData.date | date: 'fullDate' }} :
-  {{ dailyData | infectionDataTransform: 'iWantTheTruth hello' }}
+<div [appHighlightData]="style">
+  <div>
+    {{ dailyData.date | date }}
+  </div>
+  <div>
+    {{ dailyData | infectionDataTransform: iWantTheTruth:newInfectionNumber }}
+  </div>
 </div>
