@@ -1,1 +1,4 @@
-<div>{{ dailyData.date }} : {{ dailyData.numberOfDailyTests | infectionDataTransform }}</div>
+<div>
+  {{ dailyData.date | date: 'fullDate' }} :
+  {{ dailyData | infectionDataTransform: 'iWantTheTruth hello' }}
+</div>

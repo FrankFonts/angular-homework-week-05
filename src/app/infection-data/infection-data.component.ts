@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Data } from '../infection-data';
-
+import { Data } from '../shared/infection-data';
 
 @Component({
   selector: 'app-infection-data',
@@ -10,7 +9,6 @@ import { Data } from '../infection-data';
 export class InfectionDataComponent implements OnInit {
   @Input() dailyData: Data;
 
-  
   constructor() {}
 
   ngOnInit() {}
