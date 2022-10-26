@@ -9,10 +9,10 @@ import { Data, infectionData } from './shared/infection-data';
 export class AppComponent {
   infectionData: Array<Data> | undefined = infectionData;
 
-  iWantTheTruth: boolean = false;
+  doIWantTheTruth: boolean = false;
 
   @HostListener('window:keydown.alt.t', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
-    this.iWantTheTruth = !this.iWantTheTruth;
+    this.doIWantTheTruth = !this.doIWantTheTruth;
   }
 }

@@ -6,20 +6,24 @@ import { Data } from '../shared/infection-data';
   templateUrl: './infection-data.component.html',
   styleUrls: ['./infection-data.component.css'],
 })
-export class InfectionDataComponent implements OnInit, OnChanges {
+export class InfectionDataComponent implements OnInit {
   @Input() dailyData: Data;
-  @Input() iWantTheTruth: boolean = true;
+  @Input() set doIWantTheTruth(value: boolean) {
+    this.iWantTheTruth = value;
+    this.style = this.getStyle(value);
+  }
 
+  iWantTheTruth: boolean = false;
   percentage = 0;
   newInfectionNumber: number = 0;
   style: string = 'none';
 
   constructor() {}
 
-  getStyle() {
-    if (this.iWantTheTruth) {
+  getStyle(value) {
+    if (value) {
       return 'blue';
-    } else if (!this.iWantTheTruth && this.percentage >= 2.5) {
+    } else if (!value && this.percentage >= 2.5) {
       return 'red';
     } else {
       return 'green';
@@ -33,10 +37,6 @@ export class InfectionDataComponent implements OnInit, OnChanges {
       (this.dailyData.numberOfDailyTests * 2 * this.percentage) / 100
     );
 
-    this.style = this.getStyle();
-  }
-
-  ngOnChanges() {
-    this.style = this.getStyle();
+    this.style = this.getStyle(this.iWantTheTruth);
   }
 }
