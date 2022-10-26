@@ -1,3 +1,10 @@
+.green,
+.red,
+.blue {
+  padding: 16px;
+  display: block;
+}
+
 .green {
   color: forestgreen;
   background-color: #ecedee;
@@ -8,9 +15,4 @@
 }
 .blue {
   background-color: #96bdff;
-}
-
-.blokk {
-  padding: 16px;
-  display: block;
 }

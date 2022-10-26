@@ -32,6 +32,8 @@ export class InfectionDataComponent implements OnInit, OnChanges {
     this.newInfectionNumber = Math.floor(
       (this.dailyData.numberOfDailyTests * 2 * this.percentage) / 100
     );
+
+    this.style = this.getStyle();
   }
 
   ngOnChanges() {
