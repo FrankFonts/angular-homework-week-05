@@ -1,4 +1,10 @@
 app-infection-data {
-  margin-bottom: 16px;
+  margin: 8px 0;
   display: block;
+  font-size: 16px;
+  line-height: 1.26;
+  font-family: Helvetica, Arial, sans-serif;
+  border-radius: 8px;
+  border: 1px solid #96bdff;
+  overflow: hidden;
 }

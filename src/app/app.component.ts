@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Data, infectionData } from './shared/infection-data';
 
 @Component({
@@ -10,5 +10,9 @@ export class AppComponent {
   infectionData: Array<Data> | undefined = infectionData;
 
   iWantTheTruth: boolean = false;
-}
 
+  @HostListener('window:keydown.alt.t', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    this.iWantTheTruth = !this.iWantTheTruth;
+  }
+}
