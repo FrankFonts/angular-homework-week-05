@@ -8,22 +8,24 @@ import { Data } from '../shared/infection-data';
 })
 export class InfectionDataComponent implements OnInit {
   @Input() dailyData: Data;
-  @Input() newInfectionNumber: number = 0;
   @Input() iWantTheTruth: boolean = true;
+
+  percentage = 0;
+  newInfectionNumber: number = 0;
   style: string = 'none';
 
   constructor() {}
 
   ngOnInit() {
-    if (
-      !this.iWantTheTruth &&
-      this.newInfectionNumber / this.dailyData.numberOfDailyTests >= 2.5
-    ) {
+    this.percentage = Math.random() * 5;
+
+    this.newInfectionNumber = Math.floor(
+      (this.dailyData.numberOfDailyTests * 2 * this.percentage) / 100
+    );
+
+    if (!this.iWantTheTruth && this.percentage >= 2.5) {
       this.style = 'red';
-    } else if (
-      !this.iWantTheTruth &&
-      this.newInfectionNumber / this.dailyData.numberOfDailyTests < 2.5
-    ) {
+    } else if (!this.iWantTheTruth && this.percentage < 2.5) {
       this.style = 'green';
     } else {
       this.style = 'blue';

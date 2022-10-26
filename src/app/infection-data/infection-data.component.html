@@ -1,6 +1,6 @@
-<div [appHighlightData]="style">
+<div [appHighlightData]="style" [ngClass]="'blokk'">
   <div>
-    {{ dailyData.date | date }}
+    {{ dailyData.date | date: 'YYYY MMMM d' }}
   </div>
   <div>
     {{ dailyData | infectionDataTransform: iWantTheTruth:newInfectionNumber }}

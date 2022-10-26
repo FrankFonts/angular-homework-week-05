@@ -11,11 +11,11 @@ export class infectionDataTransformPipe implements PipeTransform {
     newInfectionNumber?: number
   ): string {
     // ha nem kérjük az igazi adatokat, adjunk vissza hamisakat
-    if (!iWantTheTruth) {
+    if (!iWantTheTruth && newInfectionNumber) {
       let fakeNumberOfDailyTests = value.numberOfDailyTests * 2;
       let fakeInHospital = Math.floor(value.inHospital / 3);
 
-      return `${fakeNumberOfDailyTests} tesztet végeztek el ma, ${newInfectionNumber} új fertőzöttet találtak, ${fakeInHospital} fő van kórházban (${newInfectionNumber/fakeNumberOfDailyTests}%), mindannyian oltatlan idős krónikus betegek.`;
+      return `${fakeNumberOfDailyTests} tesztet végeztek el ma, ${newInfectionNumber} új fertőzöttet találtak, ${fakeInHospital} fő van kórházban, mindannyian oltatlan idős krónikus betegek.`;
     }
 
     // különben adjuk vissza az igazi adatokat

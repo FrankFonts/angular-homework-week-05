@@ -5,5 +5,10 @@
   color: red;
 }
 .blue {
-  background-color: blue;
+  background-color: #96bdff;
+}
+
+.blokk {
+  padding: 16px;
+  display: block;
 }
